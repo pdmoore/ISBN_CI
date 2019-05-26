@@ -32,4 +32,14 @@ public class ISBN10Tests {
         // Assert
         assertEquals("ISBN must be 10 characters in length", actual.title);
     }
+
+    @Test
+    public void ISBN_BookNotFound() {
+
+        String unknownISBN = "0553562614";
+
+        BookInfo actual = ISBNFinder.lookup(unknownISBN);
+
+        assertEquals("Title not found", actual.title);
+    }
 }
