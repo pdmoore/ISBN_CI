@@ -13,7 +13,8 @@ public class ISBN10Tests {
         String shortISBN = "12345";
 
         // Act
-        BookInfo actual = ISBNFinder.lookup(shortISBN);
+        ISBNFinder sut = new ISBNFinder();
+        BookInfo actual = sut.lookup(shortISBN);
 
         // Assert
         assertEquals("ISBN must be 10 characters in length", actual.title);
@@ -26,7 +27,8 @@ public class ISBN10Tests {
         String longISBN = "1234567890BCDEF";
 
         // Act
-        BookInfo actual = ISBNFinder.lookup(longISBN);
+        ISBNFinder sut = new ISBNFinder();
+        BookInfo actual = sut.lookup(longISBN);
 
         // Assert
         assertEquals("ISBN must be 10 characters in length", actual.title);
@@ -37,7 +39,8 @@ public class ISBN10Tests {
 
         String unknownISBN = "0553562614";
 
-        BookInfo actual = ISBNFinder.lookup(unknownISBN);
+        ISBNFinder sut = new ISBNFinder();
+        BookInfo actual = sut.lookup(unknownISBN);
 
         assertEquals("Title not found", actual.title);
     }
@@ -46,7 +49,8 @@ public class ISBN10Tests {
     public void ISBN_BookFound() {
         String ISBN = "0321146530";
 
-        BookInfo actual = ISBNFinder.lookup(ISBN);
+        ISBNFinder sut = new ISBNFinder();
+        BookInfo actual = sut.lookup(ISBN);
 
         BookInfo expected = new BookInfo("Test Driven Development by Example", "Kent Beck", "0321146530", "9780321146533");
 
