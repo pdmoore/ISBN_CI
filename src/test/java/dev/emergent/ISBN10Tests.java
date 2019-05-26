@@ -1,6 +1,5 @@
 package dev.emergent;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -41,5 +40,16 @@ public class ISBN10Tests {
         BookInfo actual = ISBNFinder.lookup(unknownISBN);
 
         assertEquals("Title not found", actual.title);
+    }
+
+    @Test
+    public void ISBN_BookFound() {
+        String ISBN = "0321146530";
+
+        BookInfo actual = ISBNFinder.lookup(ISBN);
+
+        BookInfo expected = new BookInfo("Test Driven Development by Example", "Kent Beck", "0321146530", "9780321146533");
+
+        assertEquals(expected.toString(), actual.toString());
     }
 }
