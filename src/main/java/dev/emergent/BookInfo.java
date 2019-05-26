@@ -29,4 +29,12 @@ public class BookInfo {
         sb.append(ISBN_13);
         return sb.toString();
     }
+
+    public String isbn10() {
+        return ISBN_10;
+    }
+
+    public String isbn13() {
+        return ISBN_13;
+    }
 }

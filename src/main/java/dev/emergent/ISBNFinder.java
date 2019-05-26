@@ -5,7 +5,11 @@ public class ISBNFinder {
     private BookInfoProvider isbnService = null;
 
     public ISBNFinder() {
-        isbnService = ISBNService.getInstance();
+        this(ISBNService.getInstance());
+    }
+
+    public ISBNFinder(BookInfoProvider bookInfoProvider) {
+        isbnService = bookInfoProvider;
     }
 
     public BookInfo lookup(String ISBN) {
